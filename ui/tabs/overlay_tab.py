@@ -4,12 +4,15 @@ from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QFormLayout, QCheckBox, QPushButton, QSizePolicy, QColorDialog
 )
 from PyQt6.QtGui import QColor
+from ui.tooltip import TooltipManager
 
 
 class OverlayTab(QWidget):
     def __init__(self, main_window):
         super().__init__()
         self.main = main_window
+        # Инициализируем менеджер подсказок
+        self.tooltip_manager = TooltipManager()
         layout = QVBoxLayout(self)
         form = QFormLayout()
         self.setStyleSheet("QFormLayout { margin: 20px; }")
@@ -24,20 +27,28 @@ class OverlayTab(QWidget):
             def make_lambda(idx_val):
                 return lambda state: self.update_visibility(idx_val, state == Qt.CheckState.Checked)
             cb.stateChanged.connect(make_lambda(i))
+            # Добавляем подсказку
+            self.tooltip_manager.register_widget(cb, "Показывать/скрывать элементы оверлея")
             self.cbs.append(cb)
             form.addRow(cb)
 
         self.bg_btn = QPushButton("Цвет фона (с прозрачностью)")
         self.bg_btn.clicked.connect(self.pick_bg_color)
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(self.bg_btn, "Выбрать цвет фона оверлея с прозрачностью")
         form.addRow(self.bg_btn)
 
         self.text_btn = QPushButton("Цвет текста")
         self.text_btn.clicked.connect(self.pick_text_color)
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(self.text_btn, "Выбрать цвет текста оверлея")
         form.addRow(self.text_btn)
 
         self.click_through_cb = QCheckBox("Пропускать клики мыши")
         self.click_through_cb.setChecked(self.main.overlay_window.click_through)
         self.click_through_cb.stateChanged.connect(self.update_click_through)
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(self.click_through_cb, "Режим прозрачности для кликов (оверлей не перехватывает клики)")
         form.addRow(self.click_through_cb)
 
         layout.addLayout(form)

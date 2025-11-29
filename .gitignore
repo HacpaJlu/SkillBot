@@ -1,7 +1,10 @@
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
+
+# Distribution / packaging
 .Python
 env/
 venv/
@@ -16,15 +19,155 @@ nosetests.xml
 coverage.xml
 *.cover
 *.log
+
+# Git
 .git/
-.mypy_cache/
+
+# Pytest
 .pytest_cache/
+.mypy_cache/
 .hypothesis/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS generated files
 .DS_Store
 Thumbs.db
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Windows
+$RECYCLE.BIN/
+*.tmp
+*.temp
+*.bak
+*.cache
+*.exe
+*.dll
+*.msi
+*.log
+
+# Linux
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+
+# Python
+*.pyc
+*.pyo
+*.pyd
+.Python
+__pycache__/
+*.so
+.Python
+env/
+venv/
+.python-version
+.venv.bak/
+venv.bak/
+
+# Build and development tools
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Coverage
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Sage
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre
+.pyre/
+
+# IDE specific files
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
-__version__.py
+*.tmp
+*.temp
+*.log
+
+# __version__.py
+# This file is intentionally included in the repository to track version information

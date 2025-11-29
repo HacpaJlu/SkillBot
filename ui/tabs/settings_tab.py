@@ -9,6 +9,7 @@ from PyQt6.QtGui import QAction, QBrush, QConicalGradient, QCursor, QFont, QIcon
 from PyQt6.QtWidgets import QApplication, QCheckBox, QComboBox, QDialog, QFormLayout, QHBoxLayout, QInputDialog, QLabel, QLineEdit, QPushButton, QScrollArea, QSizePolicy, QSpinBox, QTabWidget, QVBoxLayout, QWidget
 
 from utils import KeyCaptureButton, SelectAllLineEdit
+from ui.tooltip import TooltipManager
 # legacy imports removed (migrated to PyQt6 above)
 
 
@@ -17,6 +18,8 @@ class SettingsTab(QWidget):
         super().__init__()
         self.main = main_window
 
+        # Инициализируем менеджер подсказок
+        self.tooltip_manager = TooltipManager()
         layout = QVBoxLayout(self)
         layout.setSpacing(10)
         self.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
@@ -26,16 +29,24 @@ class SettingsTab(QWidget):
         top.addWidget(QLabel("Профиль:"))
         self.profile_combo = QComboBox()
         self.profile_combo.setMinimumWidth(300)
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(self.profile_combo, "Выбор профиля настроек")
         top.addWidget(self.profile_combo)
         new_btn = QPushButton("Новый")
         new_btn.clicked.connect(self.main.new_profile)
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(new_btn, "Создать новый профиль")
         top.addWidget(new_btn)
         delete_btn = QPushButton("Удалить")
         delete_btn.clicked.connect(self.main.delete_profile)
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(delete_btn, "Удалить текущий профиль")
         top.addWidget(delete_btn)
         save_btn = QPushButton("Сохранить")
         save_btn.setObjectName("success")
         save_btn.clicked.connect(self.main.save_profile)
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(save_btn, "Сохранить текущий профиль")
         top.addWidget(save_btn)
         top.addStretch()
         layout.addLayout(top)
@@ -48,14 +59,20 @@ class SettingsTab(QWidget):
         row1 = QHBoxLayout()
         self.enable_cb = QCheckBox("Включить бота")
         self.enable_cb.stateChanged.connect(self.main.toggle_bot)
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(self.enable_cb, "Включить/выключить бота")
         row1.addWidget(self.enable_cb)
         self.hotkey_btn = KeyCaptureButton(self.main.hotkey.upper())
         self.hotkey_btn.key_captured.connect(self.main.change_hotkey)
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(self.hotkey_btn, "Горячая клавиша для включения/выключения бота")
         row1.addWidget(QLabel("   Горячая:"))
         row1.addWidget(self.hotkey_btn)
         # Panic key (emergency stop)
         self.panic_btn = KeyCaptureButton(getattr(self.main, 'panic_key', 'f12').upper())
         self.panic_btn.key_captured.connect(self.main.change_panic_key)
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(self.panic_btn, "Клавиша паники - мгновенная остановка бота")
         row1.addWidget(QLabel("   Клавиша паники:"))
         row1.addWidget(self.panic_btn)
         row1.addStretch()
@@ -67,10 +84,14 @@ class SettingsTab(QWidget):
         if not hasattr(self, "autopot_tab_cb"):
             self.autopot_tab_cb = QCheckBox("Показать вкладку настроек автопота")
             self.autopot_tab_cb.stateChanged.connect(self.main.toggle_autopot_tab)
+            # Добавляем подсказку
+            self.tooltip_manager.register_widget(self.autopot_tab_cb, "Показать/скрыть вкладку автопота")
             form.addRow(self.autopot_tab_cb)
 
         self.overlay_tab_cb = QCheckBox("Показать вкладку оверлея")
         self.overlay_tab_cb.stateChanged.connect(self.main.toggle_overlay_tab)
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(self.overlay_tab_cb, "Показать/скрыть вкладку оверлея")
         form.addRow(self.overlay_tab_cb)
 
         # ПАУЗА ПРИ ДВИЖЕНИИ — НОВАЯ ФУНКЦИЯ
@@ -78,6 +99,8 @@ class SettingsTab(QWidget):
         self.pause_on_input_cb.setToolTip(
             "Бот не будет нажимать НИ ОДНУ клавишу, пока вы двигаетесь"
         )
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(self.pause_on_input_cb, "Пауза бота при движении мыши или клавишах")
         self.pause_on_input_cb.stateChanged.connect(self.main.toggle_pause_on_input)
         # Duration control (seconds) — manual entry only (no spinbox)
         pause_h = QHBoxLayout()
@@ -97,6 +120,8 @@ class SettingsTab(QWidget):
         except Exception:
             self.pause_duration_edit.setText('1.0')
         self.pause_duration_edit.setToolTip('Длительность паузы после ввода пользователя (в секундах). Ввод вручную.')
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(self.pause_duration_edit, "Длительность паузы после пользовательского ввода")
         self.pause_duration_edit.editingFinished.connect(self._on_pause_duration_changed)
         pause_h.addWidget(QLabel('Длительность (с):'))
         pause_h.addWidget(self.pause_duration_edit)
@@ -110,18 +135,26 @@ class SettingsTab(QWidget):
         self.window_input.textChanged.connect(
             self.apply_window_now
         )  # ← теперь метод есть!
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(self.window_input, "Имя окна, в котором должен работать бот")
         win_h.addWidget(self.window_input)
         select_from_list_btn = QPushButton("Из списка")
         select_from_list_btn.clicked.connect(self.select_window)
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(select_from_list_btn, "Выбрать окно из списка активных процессов")
         win_h.addWidget(select_from_list_btn)
         select_by_click_btn = QPushButton("Кликом")
         select_by_click_btn.clicked.connect(self.select_window_by_click)
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(select_by_click_btn, "Выбрать окно кликом по нему")
         win_h.addWidget(select_by_click_btn)
         form.addRow("Работать только в окне:", win_h)
 
         # Отладка
         self.debug_cb = QCheckBox("Отладка")
         self.debug_cb.stateChanged.connect(self.main.toggle_debug_tab)
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(self.debug_cb, "Показать/скрыть вкладку отладки")
         form.addRow(self.debug_cb)
 
         layout.addLayout(form)
@@ -140,6 +173,8 @@ class SettingsTab(QWidget):
         add_btn = QPushButton("＋ Добавить скилл")
         add_btn.clicked.connect(self.add_skill_row)
         add_btn.setObjectName("primary")
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(add_btn, "Добавить новый скилл в профиль")
         layout.addWidget(add_btn)
 
     def apply_window_now(self):

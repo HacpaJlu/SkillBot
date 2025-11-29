@@ -1,11 +1,15 @@
 from PyQt6.QtCore import Qt, QPoint, QSize, pyqtSignal
 from PyQt6.QtGui import QColor, QFont, QPainter, QPainterPath
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QFormLayout, QCheckBox, QPushButton, QColorDialog, QLabel
+from ui.tooltip import TooltipManager
 
 class OverlayWindow(QWidget):
     def __init__(self, main_window):
         super().__init__()
         self.main = main_window
+
+        # Инициализируем менеджер подсказок
+        self.tooltip_manager = TooltipManager()
 
         self.setWindowFlags(Qt.WindowType.Tool | Qt.WindowType.WindowStaysOnTopHint | Qt.WindowType.FramelessWindowHint)
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground, True)
@@ -56,6 +60,8 @@ class OverlayWindow(QWidget):
             label.setFont(self.font_obj)
             label.setStyleSheet(f"color: {self.text_color.name()};")
             label.setVisible(visible)
+            # Добавляем подсказку
+            self.tooltip_manager.register_widget(label, f"Элемент оверлея: {text}")
             self.layout_obj.addWidget(label)
             self.labels.append(label)
 

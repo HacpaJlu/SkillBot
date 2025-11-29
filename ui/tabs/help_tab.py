@@ -2,11 +2,14 @@
 import os
 from PyQt6.QtWidgets import QWidget, QVBoxLayout
 from PyQt6.QtWebEngineWidgets import QWebEngineView
+from ui.tooltip import TooltipManager
 
 class HelpTab(QWidget):
     def __init__(self):
         super().__init__()
         from PyQt6.QtWidgets import QSizePolicy
+        # Инициализируем менеджер подсказок
+        self.tooltip_manager = TooltipManager()
         # Создаем layout для виджета
         layout = QVBoxLayout(self)
         layout.setContentsMargins(0, 0, 0, 0)
@@ -14,6 +17,8 @@ class HelpTab(QWidget):
         
         # Создаем QWebEngineView для отображения HTML с поддержкой JavaScript
         self.web_view = QWebEngineView()
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(self.web_view, "Панель справки и инструкций по использованию бота")
         # Устанавливаем политику размера
         self.web_view.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         

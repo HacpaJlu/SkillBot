@@ -3,6 +3,7 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QLabel, QScrollArea, QSizePolicy
 )
+from ui.tooltip import TooltipManager
 
 
 class MainTab(QWidget):
@@ -13,6 +14,9 @@ class MainTab(QWidget):
         layout = QVBoxLayout(self)
         layout.setSpacing(15)
 
+        # Инициализируем менеджер подсказок
+        self.tooltip_manager = TooltipManager()
+
         # Примение стилей через объекты
         self.status_label = QLabel("ОЖИДАНИЕ...")
         self.status_label.setObjectName("status_label")
@@ -20,6 +24,8 @@ class MainTab(QWidget):
         self.status_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.status_label.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         self.status_label.setStyleSheet("font-size: 32px; font-weight: bold; color: #b0b0b0;")
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(self.status_label, "Статус бота - показывает текущее состояние (работает/ожидает)")
         layout.addWidget(self.status_label)
 
         self.casting_label = QLabel("")
@@ -27,6 +33,8 @@ class MainTab(QWidget):
         self.casting_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.casting_label.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         self.casting_label.setStyleSheet("font-size: 22px; color: #ffc107; font-weight: bold;")
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(self.casting_label, "Информация о текущем касте скилла")
         layout.addWidget(self.casting_label)
 
         self.urgent_label = QLabel("")
@@ -34,6 +42,8 @@ class MainTab(QWidget):
         self.urgent_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.urgent_label.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         self.urgent_label.setStyleSheet("font-size: 20px; color: #ff0066; font-weight: bold;")
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(self.urgent_label, "Отображает срочный скилл, требующий приоритетного выполнения")
         layout.addWidget(self.urgent_label)
 
         self.queue_label = QLabel("Очередь пуста")
@@ -41,6 +51,8 @@ class MainTab(QWidget):
         self.queue_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.queue_label.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         self.queue_label.setStyleSheet("font-size: 20px; color: #4caf50;")
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(self.queue_label, "Информация об очереди скиллов")
         layout.addWidget(self.queue_label)
         
         self.skills_count_label = QLabel("Скиллов: 0")
@@ -48,6 +60,8 @@ class MainTab(QWidget):
         self.skills_count_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.skills_count_label.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         self.skills_count_label.setStyleSheet("font-size: 24px; color: #00d4ff;")
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(self.skills_count_label, "Количество скилов в текущем профиле")
         layout.addWidget(self.skills_count_label)
 
         self.autopot_status_label = QLabel("АВТОПОТ: ВЫКЛЮЧЕН")
@@ -56,6 +70,8 @@ class MainTab(QWidget):
         self.autopot_status_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.autopot_status_label.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         self.autopot_status_label.setStyleSheet("font-size: 18px; color: #f44336; font-weight: bold;")
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(self.autopot_status_label, "Статус автопота (включен/выключен)")
         layout.addWidget(self.autopot_status_label)
 
         scroll = QScrollArea()

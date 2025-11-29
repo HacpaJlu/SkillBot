@@ -157,6 +157,10 @@ class AutopotTab(QWidget):
         self.thread: AutopotThread = AutopotThread(self)  # Явно указываем тип
         self.thread.log_signal.connect(self.main.update_log)
 
+        # Инициализируем менеджер подсказок
+        from ui.tooltip import TooltipManager
+        self.tooltip_manager = TooltipManager()
+
         self.coords = None
         self.base_color = None
         self.hotkey = "f9"
@@ -185,6 +189,8 @@ class AutopotTab(QWidget):
         delete_btn.setObjectName("autopot_delete")  # Используем новый стиль из ui/styles.py
         delete_btn.setFixedSize(30, 30)
         delete_btn.setToolTip("Удалить автопот")
+        # Регистрируем подсказку
+        self.tooltip_manager.register_widget(delete_btn, "Удалить автопот")
         # Пока скрываем кнопку, так как функционал удаления автопота не реализован
         delete_btn.hide()
         
@@ -200,20 +206,28 @@ class AutopotTab(QWidget):
         grid.addWidget(QLabel("Горячая клавиша:"), 0, 0)
         self.hotkey_btn = KeyCaptureButton(self.hotkey.upper())
         self.hotkey_btn.key_captured.connect(self.change_hotkey)
+        # Регистрируем подсказку
+        self.tooltip_manager.register_widget(self.hotkey_btn, "Горячая клавиша для включения/выключения автопота")
         grid.addWidget(self.hotkey_btn, 0, 1)
 
         grid.addWidget(QLabel("Точка:"), 1, 0)
         self.coord_lbl = QLabel("Не выбрана")
         self.coord_lbl.setStyleSheet("color:red;font-weight:bold")
+        # Регистрируем подсказку
+        self.tooltip_manager.register_widget(self.coord_lbl, "Координаты точки для отслеживания HP")
         grid.addWidget(self.coord_lbl, 1, 1)
 
         grid.addWidget(QLabel("Цвет:"), 2, 0)
         self.color_lbl = QLabel("Не выбран")
         self.color_lbl.setStyleSheet("color:red;font-weight:bold")
+        # Регистрируем подсказку
+        self.tooltip_manager.register_widget(self.color_lbl, "Цветовой эталон для отслеживания HP")
         grid.addWidget(self.color_lbl, 2, 1)
 
         grid.addWidget(QLabel("Клавиша нажатия:"), 3, 0)
         self.key_btn = KeyCaptureButton("F")
+        # Регистрируем подсказку
+        self.tooltip_manager.register_widget(self.key_btn, "Клавиша для использования зелья")
         grid.addWidget(self.key_btn, 3, 1)
 
         grid.addWidget(QLabel("Кулдаун:"), 4, 0)
@@ -226,15 +240,21 @@ class AutopotTab(QWidget):
         except Exception:
             pass
         self.cd_edit.setValidator(cd_validator)
+        # Регистрируем подсказку
+        self.tooltip_manager.register_widget(self.cd_edit, "Задержка между нажатиями (в секундах)")
         grid.addWidget(self.cd_edit, 4, 1)
 
         grid.addWidget(QLabel("Чувствительность:"), 5, 0)
         self.thresh_edit = QLineEdit("15")
         self.thresh_edit.setValidator(QIntValidator(1, 255))
+        # Регистрируем подсказку
+        self.tooltip_manager.register_widget(self.thresh_edit, "Порог срабатывания (разница цвета)")
         grid.addWidget(self.thresh_edit, 5, 1)
 
         # Добавляем чекбокс для включения ROI анализа
         self.use_roi_checkbox = QCheckBox("Использовать анализ области (ROI)")
+        # Регистрируем подсказку
+        self.tooltip_manager.register_widget(self.use_roi_checkbox, "Использовать анализ области для более точного определения HP")
         self.use_roi_checkbox.stateChanged.connect(self.toggle_roi_options)
         layout.addWidget(self.use_roi_checkbox)
 
@@ -246,16 +266,22 @@ class AutopotTab(QWidget):
         roi_layout.addWidget(QLabel("Ширина ROI:"), 0, 0)
         self.roi_width_edit = QLineEdit("100")
         self.roi_width_edit.setValidator(QIntValidator(1, 1000))
+        # Регистрируем подсказку
+        self.tooltip_manager.register_widget(self.roi_width_edit, "Ширина области для анализа HP (в пикселях)")
         roi_layout.addWidget(self.roi_width_edit, 0, 1)
 
         roi_layout.addWidget(QLabel("Высота ROI:"), 1, 0)
         self.roi_height_edit = QLineEdit("20")
         self.roi_height_edit.setValidator(QIntValidator(1, 1000))
+        # Регистрируем подсказку
+        self.tooltip_manager.register_widget(self.roi_height_edit, "Высота области для анализа HP (в пикселях)")
         roi_layout.addWidget(self.roi_height_edit, 1, 1)
 
         roi_layout.addWidget(QLabel("Порог HP (%):"), 2, 0)
         self.hp_threshold_edit = QLineEdit("30.0")
         self.hp_threshold_edit.setValidator(QDoubleValidator(0.0, 100.0, 1))
+        # Регистрируем подсказку
+        self.tooltip_manager.register_widget(self.hp_threshold_edit, "Процент HP, при котором использовать зелье")
         roi_layout.addWidget(self.hp_threshold_edit, 2, 1)
 
         layout.addWidget(self.roi_options_widget)
@@ -263,6 +289,8 @@ class AutopotTab(QWidget):
         self.status = QLabel("ВЫКЛЮЧЕН")
         self.status.setStyleSheet("font-size:22px;color:#ff4444;font-weight:bold")
         self.status.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        # Регистрируем подсказку
+        self.tooltip_manager.register_widget(self.status, "Статус автопота (включен/выключен)")
         layout.addWidget(self.status)
 
         layout.addLayout(grid)
@@ -273,11 +301,15 @@ class AutopotTab(QWidget):
         btn = QPushButton("Выбрать точку (ЛКМ при полном ХП)")
         btn.clicked.connect(self.pick_color)
         btn.setObjectName("primary") # Используем существующий стиль кнопки из стилей
+        # Регистрируем подсказку
+        self.tooltip_manager.register_widget(btn, "Выбрать точку на экране для отслеживания HP")
         button_layout.addWidget(btn)
         
         btn_roi = QPushButton("Выбрать ROI")
         btn_roi.clicked.connect(self.pick_roi)
         btn_roi.setObjectName("primary") # Используем существующий стиль кнопки из стилей
+        # Регистрируем подсказку
+        self.tooltip_manager.register_widget(btn_roi, "Выбрать область для анализа HP")
         button_layout.addWidget(btn_roi)
         
         layout.addLayout(button_layout)

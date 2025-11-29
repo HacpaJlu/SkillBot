@@ -1,6 +1,7 @@
 import keyboard
 from PyQt6.QtCore import Qt, QTimer, pyqtSignal
 from PyQt6.QtWidgets import QPushButton
+from ui.tooltip import TooltipManager
 
 
 class KeyCaptureButton(QPushButton):
@@ -15,6 +16,10 @@ class KeyCaptureButton(QPushButton):
         self.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.is_capturing = False
         self.hook = None
+        # Инициализируем менеджер подсказок
+        self.tooltip_manager = TooltipManager()
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(self, "Кнопка для захвата клавиши - нажмите для назначения")
         self.clicked.connect(self.toggle_capture)
 
     def toggle_capture(self):

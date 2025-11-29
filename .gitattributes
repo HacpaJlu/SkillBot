@@ -1,0 +1,21 @@
+# .gitattributes
+# Установка окончаний строк в формате LF (для Unix-систем)
+* text=auto eol=lf
+
+# Исключение исполняемых файлов из обработки окончаний строк
+*.exe binary
+*.bin binary
+*.dll binary
+*.so binary
+*.dylib binary
+
+# Языковые настройки для лучшей работы GitHub
+*.py linguist-language=Python
+*.html linguist-language=HTML
+*.css linguist-language=CSS
+*.js linguist-language=JavaScript
+
+# Исключить временные файлы
+*.tmp filter= -text
+*.temp filter= -text
+*.log filter= -text

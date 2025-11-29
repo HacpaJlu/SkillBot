@@ -1,6 +1,7 @@
 from PyQt6.QtCore import Qt, pyqtSignal, QRect, QPoint
 from PyQt6.QtWidgets import QWidget, QLabel, QApplication
 from PyQt6.QtGui import QFont, QPainter, QColor, QPen
+from ui.tooltip import TooltipManager
 
 
 class ROIOverlay(QWidget):
@@ -12,6 +13,8 @@ class ROIOverlay(QWidget):
 
     def __init__(self, parent=None, message="Выделите прямоугольную область для ROI (Esc — отмена)"):
         super().__init__(parent)
+        # Инициализируем менеджер подсказок
+        self.tooltip_manager = TooltipManager()
         self.setWindowFlags(Qt.WindowType.FramelessWindowHint | Qt.WindowType.WindowStaysOnTopHint | Qt.WindowType.Tool)
         self.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents, False)
         self.setAttribute(Qt.WidgetAttribute.WA_NoSystemBackground, True)
@@ -19,6 +22,8 @@ class ROIOverlay(QWidget):
         self.message = message
 
         self.label = QLabel(self.message, self)
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(self.label, "Оверлей для выделения прямоугольной области")
         font = QFont()
         font.setPointSize(20)
         font.setBold(True)

@@ -1,6 +1,7 @@
 from PyQt6.QtCore import Qt, pyqtSignal, QRect
 from PyQt6.QtWidgets import QWidget, QLabel, QApplication
 from PyQt6.QtGui import QFont, QPainter, QColor
+from ui.tooltip import TooltipManager
 
 
 class ClickOverlay(QWidget):
@@ -8,6 +9,8 @@ class ClickOverlay(QWidget):
 
     def __init__(self, parent=None, message="Кликните левой кнопкой мыши для выбора точки"):
         super().__init__(parent)
+        # Инициализируем менеджер подсказок
+        self.tooltip_manager = TooltipManager()
         self.setWindowFlags(Qt.WindowType.FramelessWindowHint | Qt.WindowType.WindowStaysOnTopHint | Qt.WindowType.Tool)
         self.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents, False)
         self.setAttribute(Qt.WidgetAttribute.WA_NoSystemBackground, True)
@@ -15,6 +18,8 @@ class ClickOverlay(QWidget):
         self.message = message
 
         self.label = QLabel(self.message, self)
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(self.label, "Оверлей для выбора точки на экране кликом")
         font = QFont()
         font.setPointSize(20)
         font.setBold(True)
@@ -85,10 +90,12 @@ class ClickOverlay(QWidget):
 
 
 class WindowSelectOverlay(QWidget):
-    window_selected = pyqtSignal(str)  # Emits window process name
+    window_selected = pyqtSignal(str) # Emits window process name
 
     def __init__(self, parent=None, message="Кликни на окно для выбора"):
         super().__init__(parent)
+        # Инициализируем менеджер подсказок
+        self.tooltip_manager = TooltipManager()
         self.setWindowFlags(Qt.WindowType.FramelessWindowHint | Qt.WindowType.WindowStaysOnTopHint | Qt.WindowType.Tool)
         self.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents, False)
         self.setAttribute(Qt.WidgetAttribute.WA_NoSystemBackground, True)
@@ -96,6 +103,8 @@ class WindowSelectOverlay(QWidget):
         self.message = message
 
         self.label = QLabel(self.message, self)
+        # Добавляем подсказку
+        self.tooltip_manager.register_widget(self.label, "Оверлей для выбора окна кликом")
         font = QFont()
         font.setPointSize(20)
         font.setBold(True)
