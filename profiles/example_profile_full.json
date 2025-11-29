@@ -1,0 +1,84 @@
+{
+  "target_window": "",
+  "debug": true,
+  "pause_on_input": true,
+  "pause_on_input_duration": 0.5,
+  "skills": [
+    {
+      "key": "1",
+      "cooldown": 1.0,
+      "cast_time": 1.0,
+      "priority": 5
+    },
+    {
+      "key": "2",
+      "cooldown": 2.0,
+      "cast_time": 0.5,
+      "priority": 5
+    },
+    {
+      "key": "3",
+      "cooldown": 3.0,
+      "cast_time": 0.5,
+      "priority": 5
+    },
+    {
+      "key": "4",
+      "cooldown": 4.0,
+      "cast_time": 1.0,
+      "priority": 5
+    },
+    {
+      "key": "5",
+      "cooldown": 10.0,
+      "cast_time": 3.0,
+      "priority": 11
+    },
+    {
+      "key": "6",
+      "cooldown": 1.0,
+      "cast_time": 1.0,
+      "priority": 5
+    }
+  ],
+  "autopot": {
+    "show_tab": true,
+    "coords": [
+      808,
+      539
+    ],
+    "color": [
+      16,
+      16,
+      16
+    ],
+    "press_key": "F",
+    "cd": "0.25",
+    "thresh": "15",
+    "hotkey": "f9",
+    "roi_width": 100,
+    "roi_height": 20,
+    "use_roi": false
+  },
+  "overlay": {
+    "show_tab": true,
+    "position": [
+      1,
+      3
+    ],
+    "size": [
+      240,
+      130
+    ],
+    "bg_color": "#000000",
+    "text_color": "#00ffc8",
+    "show_bot_status": true,
+    "show_autopot": true,
+    "show_casting": true,
+    "show_urgent": true,
+    "show_queue": true,
+    "click_through": false
+  },
+  "hotkey": "f8",
+  "panic_key": "f12"
+}

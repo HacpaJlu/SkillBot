@@ -1,0 +1,9 @@
+PyQt6
+PyQt6-WebEngine
+keyboard==0.13.5
+pynput==1.7.6
+mss==6.1
+numpy==1.21.6
+psutil==5.8.0
+pywin32==303
+opencv-python==4.8.1.78

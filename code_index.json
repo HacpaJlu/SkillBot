@@ -1,0 +1,2712 @@
+{
+  "files": {
+    "main.py": {
+      "relative_path": "main.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\main.py",
+      "module_doc": null,
+      "imports": [
+        "PyQt6.QtCore.Qt",
+        "PyQt6.QtWidgets.QApplication",
+        "sys",
+        "traceback",
+        "ui.main_window.MainWindow",
+        "ui.styles.apply_modern_style"
+      ],
+      "classes": [],
+      "functions": [],
+      "variables": []
+    },
+    "__version__.py": {
+      "relative_path": "__version__.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\__version__.py",
+      "module_doc": null,
+      "imports": [],
+      "classes": [],
+      "functions": [],
+      "variables": [
+        {
+          "name": "__version__",
+          "lineno": 2,
+          "repr": "Constant"
+        },
+        {
+          "name": "__author__",
+          "lineno": 3,
+          "repr": "Constant"
+        },
+        {
+          "name": "__date__",
+          "lineno": 4,
+          "repr": "Constant"
+        }
+      ]
+    },
+    "config/__init__.py": {
+      "relative_path": "config/__init__.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\config\\__init__.py",
+      "module_doc": "Config package.",
+      "imports": [],
+      "classes": [],
+      "functions": [],
+      "variables": []
+    },
+    "core/autopot.py": {
+      "relative_path": "core/autopot.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\core\\autopot.py",
+      "module_doc": null,
+      "imports": [
+        "PyQt6.QtCore.QLocale",
+        "PyQt6.QtCore.QThread",
+        "PyQt6.QtCore.QTimer",
+        "PyQt6.QtCore.Qt",
+        "PyQt6.QtCore.pyqtSignal",
+        "PyQt6.QtGui.QDoubleValidator",
+        "PyQt6.QtGui.QIntValidator",
+        "PyQt6.QtWidgets.QGridLayout",
+        "PyQt6.QtWidgets.QHBoxLayout",
+        "PyQt6.QtWidgets.QLabel",
+        "PyQt6.QtWidgets.QLineEdit",
+        "PyQt6.QtWidgets.QPushButton",
+        "PyQt6.QtWidgets.QVBoxLayout",
+        "PyQt6.QtWidgets.QWidget",
+        "keyboard",
+        "mss.mss",
+        "numpy",
+        "pynput.keyboard.Controller",
+        "pynput.mouse",
+        "threading",
+        "time",
+        "utils.KeyCaptureButton",
+        "win32gui"
+      ],
+      "classes": [
+        {
+          "name": "AutopotThread",
+          "lineno": 21,
+          "doc": null,
+          "methods": [
+            {
+              "name": "__init__",
+              "lineno": 24,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "parent_tab",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "set_params",
+              "lineno": 36,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "coords",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "color",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "key",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "cd",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "thresh",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "window",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "run",
+              "lineno": 44,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "AutopotTab",
+          "lineno": 106,
+          "doc": null,
+          "methods": [
+            {
+              "name": "__init__",
+              "lineno": 107,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "main_window",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "build_ui",
+              "lineno": 122,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "setup_hotkey",
+              "lineno": 202,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "is_valid_hotkey",
+              "lineno": 221,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "key",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "change_hotkey",
+              "lineno": 224,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "key",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "toggle",
+              "lineno": 230,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "start",
+              "lineno": 251,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "stop",
+              "lineno": 279,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "update_main_status",
+              "lineno": 287,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "pick_color",
+              "lineno": 299,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "save_to_dict",
+              "lineno": 386,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "load_from_dict",
+              "lineno": 396,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "data",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "functions": [],
+      "variables": []
+    },
+    "core/bot.py": {
+      "relative_path": "core/bot.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\core\\bot.py",
+      "module_doc": null,
+      "imports": [
+        "PyQt6.QtCore.QThread",
+        "PyQt6.QtCore.pyqtSignal",
+        "keyboard",
+        "threading",
+        "time",
+        "win32gui"
+      ],
+      "classes": [
+        {
+          "name": "SkillBot",
+          "lineno": 11,
+          "doc": null,
+          "methods": [
+            {
+              "name": "__init__",
+              "lineno": 16,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "log",
+              "lineno": 37,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "text",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "update_skills_count_log",
+              "lineno": 41,
+              "doc": "Обновляет сообщение о количестве скиллов в логе",
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "setup_user_input_hook",
+              "lineno": 47,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "run",
+              "lineno": 80,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "quit",
+              "lineno": 205,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "functions": [],
+      "variables": []
+    },
+    "core/keyboard_handler.py": {
+      "relative_path": "core/keyboard_handler.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\core\\keyboard_handler.py",
+      "module_doc": "Placeholder for keyboard handler (to be implemented later).",
+      "imports": [],
+      "classes": [],
+      "functions": [
+        {
+          "name": "register_hotkeys",
+          "lineno": 3,
+          "doc": null,
+          "params": []
+        }
+      ],
+      "variables": []
+    },
+    "core/__init__.py": {
+      "relative_path": "core/__init__.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\core\\__init__.py",
+      "module_doc": "Core package for SkillBot.\n\nCentral constants for the application (name and version) live here so\nthe UI, README and other modules can reference a single source of truth.",
+      "imports": [],
+      "classes": [],
+      "functions": [],
+      "variables": [
+        {
+          "name": "APP_NAME",
+          "lineno": 8,
+          "repr": "Constant"
+        },
+        {
+          "name": "__version__",
+          "lineno": 9,
+          "repr": "Constant"
+        },
+        {
+          "name": "__all__",
+          "lineno": 11,
+          "repr": "List"
+        }
+      ]
+    },
+    "models/profile.py": {
+      "relative_path": "models/profile.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\models\\profile.py",
+      "module_doc": "Simple profile model (placeholder).",
+      "imports": [],
+      "classes": [
+        {
+          "name": "Profile",
+          "lineno": 3,
+          "doc": null,
+          "methods": [
+            {
+              "name": "__init__",
+              "lineno": 4,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "name",
+                  "kind": "arg",
+                  "annotation": "str"
+                },
+                {
+                  "name": "data",
+                  "kind": "arg",
+                  "annotation": "dict"
+                }
+              ]
+            },
+            {
+              "name": "to_dict",
+              "lineno": 8,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "functions": [],
+      "variables": []
+    },
+    "models/skill.py": {
+      "relative_path": "models/skill.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\models\\skill.py",
+      "module_doc": "Simple skill model (placeholder).",
+      "imports": [],
+      "classes": [
+        {
+          "name": "Skill",
+          "lineno": 3,
+          "doc": null,
+          "methods": [
+            {
+              "name": "__init__",
+              "lineno": 4,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "key",
+                  "kind": "arg",
+                  "annotation": "str"
+                },
+                {
+                  "name": "cooldown",
+                  "kind": "arg",
+                  "annotation": "float"
+                },
+                {
+                  "name": "cast_time",
+                  "kind": "arg",
+                  "annotation": "float"
+                },
+                {
+                  "name": "priority",
+                  "kind": "arg",
+                  "annotation": "int"
+                }
+              ]
+            },
+            {
+              "name": "to_dict",
+              "lineno": 10,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "functions": [],
+      "variables": []
+    },
+    "models/__init__.py": {
+      "relative_path": "models/__init__.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\models\\__init__.py",
+      "module_doc": "Models package for SkillBot.",
+      "imports": [],
+      "classes": [],
+      "functions": [],
+      "variables": []
+    },
+    "scripts/build_index.py": {
+      "relative_path": "scripts/build_index.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\scripts\\build_index.py",
+      "module_doc": "Build a code index (JSON + Markdown) for the repository.\n\nUsage:\n  python scripts/build_index.py [--root PATH] [--out-json PATH] [--out-md PATH]\n\nProduces `code_index.json` and `CODE_INDEX.md` by def…",
+      "imports": [
+        "argparse.ArgumentParser",
+        "ast",
+        "json",
+        "os",
+        "sys"
+      ],
+      "classes": [],
+      "functions": [
+        {
+          "name": "is_simple_value",
+          "lineno": 18,
+          "doc": null,
+          "params": [
+            {
+              "name": "node",
+              "kind": "arg",
+              "annotation": null
+            }
+          ]
+        },
+        {
+          "name": "short",
+          "lineno": 22,
+          "doc": null,
+          "params": [
+            {
+              "name": "s",
+              "kind": "arg",
+              "annotation": null
+            },
+            {
+              "name": "n",
+              "kind": "arg",
+              "annotation": null
+            }
+          ]
+        },
+        {
+          "name": "get_params",
+          "lineno": 30,
+          "doc": "Return a list of parameter descriptors for a FunctionDef node.",
+          "params": [
+            {
+              "name": "func_node",
+              "kind": "arg",
+              "annotation": null
+            }
+          ]
+        },
+        {
+          "name": "parse_file",
+          "lineno": 56,
+          "doc": null,
+          "params": [
+            {
+              "name": "path",
+              "kind": "arg",
+              "annotation": null
+            }
+          ]
+        },
+        {
+          "name": "build_index",
+          "lineno": 121,
+          "doc": null,
+          "params": [
+            {
+              "name": "root",
+              "kind": "arg",
+              "annotation": null
+            }
+          ]
+        },
+        {
+          "name": "make_markdown",
+          "lineno": 147,
+          "doc": null,
+          "params": [
+            {
+              "name": "index",
+              "kind": "arg",
+              "annotation": null
+            },
+            {
+              "name": "root",
+              "kind": "arg",
+              "annotation": null
+            }
+          ]
+        },
+        {
+          "name": "main",
+          "lineno": 189,
+          "doc": null,
+          "params": [
+            {
+              "name": "argv",
+              "kind": "arg",
+              "annotation": null
+            }
+          ]
+        }
+      ],
+      "variables": []
+    },
+    "scripts/import_check.py": {
+      "relative_path": "scripts/import_check.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\scripts\\import_check.py",
+      "module_doc": null,
+      "imports": [
+        "importlib",
+        "os",
+        "sys",
+        "traceback"
+      ],
+      "classes": [],
+      "functions": [],
+      "variables": [
+        {
+          "name": "modules",
+          "lineno": 7,
+          "repr": "List"
+        }
+      ]
+    },
+    "scripts/prune_root.py": {
+      "relative_path": "scripts/prune_root.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\scripts\\prune_root.py",
+      "module_doc": "Prune root files script\n\nUsage:\n  - Review the script, then run in project root (PowerShell):\n      python .\\scripts\\prune_root.py\n\nBehavior:\n  - Creates/uses `archive/root_backup/` to store copies o…",
+      "imports": [
+        "os",
+        "pathlib.Path",
+        "shutil"
+      ],
+      "classes": [],
+      "functions": [],
+      "variables": [
+        {
+          "name": "WHITELIST",
+          "lineno": 22,
+          "repr": "Set"
+        },
+        {
+          "name": "archived",
+          "lineno": 46,
+          "repr": "List"
+        },
+        {
+          "name": "deleted",
+          "lineno": 47,
+          "repr": "List"
+        },
+        {
+          "name": "errors",
+          "lineno": 48,
+          "repr": "List"
+        }
+      ]
+    },
+    "ui/main_window.py": {
+      "relative_path": "ui/main_window.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\ui\\main_window.py",
+      "module_doc": null,
+      "imports": [
+        "PyQt6.QtCore.QCoreApplication",
+        "PyQt6.QtCore.QEvent",
+        "PyQt6.QtCore.QTimer",
+        "PyQt6.QtGui.QIcon",
+        "PyQt6.QtWidgets.QApplication",
+        "PyQt6.QtWidgets.QInputDialog",
+        "PyQt6.QtWidgets.QLabel",
+        "PyQt6.QtWidgets.QLineEdit",
+        "PyQt6.QtWidgets.QMainWindow",
+        "PyQt6.QtWidgets.QMessageBox",
+        "PyQt6.QtWidgets.QSizePolicy",
+        "PyQt6.QtWidgets.QSystemTrayIcon",
+        "PyQt6.QtWidgets.QTabWidget",
+        "PyQt6.QtWidgets.QTextEdit",
+        "core.APP_NAME",
+        "core.__version__",
+        "core.autopot.AutopotTab",
+        "core.bot.SkillBot",
+        "json",
+        "keyboard",
+        "os",
+        "ui.tabs.help_tab.HelpTab",
+        "ui.tabs.main_tab.MainTab",
+        "ui.tabs.overlay_tab.OverlayTab",
+        "ui.tabs.settings_tab.SettingsTab",
+        "ui.widgets.overlay_window.OverlayWindow",
+        "warnings"
+      ],
+      "classes": [
+        {
+          "name": "MainWindow",
+          "lineno": 29,
+          "doc": null,
+          "methods": [
+            {
+              "name": "__init__",
+              "lineno": 30,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "resizeEvent",
+              "lineno": 88,
+              "doc": "Обработчик изменения размера окна для адаптивности",
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "event",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "init_ui",
+              "lineno": 132,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "show_toast",
+              "lineno": 157,
+              "doc": "Show unobtrusive toast/balloon notification via system tray if available.\n\nFalls back to writing to the main log if tray is unavailable.",
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "title",
+                  "kind": "arg",
+                  "annotation": "str"
+                },
+                {
+                  "name": "message",
+                  "kind": "arg",
+                  "annotation": "str"
+                },
+                {
+                  "name": "timeout",
+                  "kind": "arg",
+                  "annotation": "int"
+                }
+              ]
+            },
+            {
+              "name": "toggle_debug_tab",
+              "lineno": 181,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "toggle_overlay_tab",
+              "lineno": 190,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "toggle_autopot_tab",
+              "lineno": 229,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "toggle_pause_on_input",
+              "lineno": 241,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "update_status",
+              "lineno": 245,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "status",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "cooldowns",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "casting_info",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "queue_info",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "urgent_skill",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "update_log",
+              "lineno": 289,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "text",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "eventFilter",
+              "lineno": 308,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "obj",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "event",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "toggle_bot",
+              "lineno": 344,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "toggle_bot_hotkey",
+              "lineno": 347,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "setup_main_hotkey",
+              "lineno": 353,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "setup_panic_hotkey",
+              "lineno": 366,
+              "doc": "Register the emergency panic hotkey which immediately stops bots and exits.",
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "change_panic_key",
+              "lineno": 384,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "key",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "emergency_stop",
+              "lineno": 402,
+              "doc": "Immediate emergency stop: force exit application immediately.",
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "_simple_emergency_stop",
+              "lineno": 413,
+              "doc": "Simple emergency stop implementation.",
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "change_hotkey",
+              "lineno": 457,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "key",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "save_settings",
+              "lineno": 472,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "load_settings",
+              "lineno": 484,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "load_last_profile",
+              "lineno": 503,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "load_window_size",
+              "lineno": 512,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "load_profiles",
+              "lineno": 524,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "new_profile",
+              "lineno": 544,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "delete_profile",
+              "lineno": 567,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "save_profile",
+              "lineno": 582,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "safe_load_profile",
+              "lineno": 622,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "name",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "closeEvent",
+              "lineno": 729,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "e",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "functions": [],
+      "variables": [
+        {
+          "name": "PROFILES_DIR",
+          "lineno": 22,
+          "repr": "Constant"
+        },
+        {
+          "name": "CONFIG_DIR",
+          "lineno": 23,
+          "repr": "Constant"
+        }
+      ]
+    },
+    "ui/styles.py": {
+      "relative_path": "ui/styles.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\ui\\styles.py",
+      "module_doc": "Modern CSS-like styles for SkillBot application\nThis module contains QSS (Qt Style Sheets) styles for modern UI design",
+      "imports": [
+        "style_modules.base.BUTTON_STYLES",
+        "style_modules.base.CHECKBOX_STYLES",
+        "style_modules.base.INPUT_STYLES",
+        "style_modules.base.SCROLLBAR_STYLES",
+        "style_modules.colors.*",
+        "style_modules.components.MAIN_TAB_STYLES",
+        "style_modules.components.SETTINGS_TAB_STYLES",
+        "style_modules.components.SKILL_ITEM_STYLES",
+        "style_modules.responsive.get_responsive_style",
+        "style_modules.window.MAIN_WINDOW_STYLE"
+      ],
+      "classes": [],
+      "functions": [
+        {
+          "name": "get_modern_style",
+          "lineno": 25,
+          "doc": "Возвращает комбинированный современный стиль для приложения",
+          "params": []
+        },
+        {
+          "name": "apply_modern_style",
+          "lineno": 32,
+          "doc": "Применяет современный стиль к виджету",
+          "params": [
+            {
+              "name": "widget",
+              "kind": "arg",
+              "annotation": null
+            }
+          ]
+        }
+      ],
+      "variables": []
+    },
+    "ui/__init__.py": {
+      "relative_path": "ui/__init__.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\ui\\__init__.py",
+      "module_doc": "UI package for SkillBot (auto-created).",
+      "imports": [],
+      "classes": [],
+      "functions": [],
+      "variables": []
+    },
+    "ui/style_modules/base.py": {
+      "relative_path": "ui/style_modules/base.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\ui\\style_modules\\base.py",
+      "module_doc": "Base styles for SkillBot application\nThis module contains basic component styles (buttons, checkboxes, inputs, etc.)",
+      "imports": [
+        "colors.*"
+      ],
+      "classes": [],
+      "functions": [],
+      "variables": []
+    },
+    "ui/style_modules/colors.py": {
+      "relative_path": "ui/style_modules/colors.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\ui\\style_modules\\colors.py",
+      "module_doc": "Color definitions for SkillBot application\nThis module contains color variables used throughout the application",
+      "imports": [],
+      "classes": [],
+      "functions": [],
+      "variables": [
+        {
+          "name": "PRIMARY_COLOR",
+          "lineno": 7,
+          "repr": "Constant"
+        },
+        {
+          "name": "SECONDARY_COLOR",
+          "lineno": 8,
+          "repr": "Constant"
+        },
+        {
+          "name": "BACKGROUND_COLOR",
+          "lineno": 9,
+          "repr": "Constant"
+        },
+        {
+          "name": "PANEL_COLOR",
+          "lineno": 10,
+          "repr": "Constant"
+        },
+        {
+          "name": "HIGHLIGHT_COLOR",
+          "lineno": 11,
+          "repr": "Constant"
+        },
+        {
+          "name": "SUCCESS_COLOR",
+          "lineno": 12,
+          "repr": "Constant"
+        },
+        {
+          "name": "WARNING_COLOR",
+          "lineno": 13,
+          "repr": "Constant"
+        },
+        {
+          "name": "DANGER_COLOR",
+          "lineno": 14,
+          "repr": "Constant"
+        },
+        {
+          "name": "TEXT_COLOR",
+          "lineno": 17,
+          "repr": "Constant"
+        },
+        {
+          "name": "TEXT_SECONDARY",
+          "lineno": 18,
+          "repr": "Constant"
+        },
+        {
+          "name": "TEXT_DISABLED",
+          "lineno": 19,
+          "repr": "Constant"
+        }
+      ]
+    },
+    "ui/style_modules/components.py": {
+      "relative_path": "ui/style_modules/components.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\ui\\style_modules\\components.py",
+      "module_doc": "Component-specific styles for SkillBot application\nThis module contains styles for specific UI components (skills, autopot, etc.)",
+      "imports": [
+        "colors.*"
+      ],
+      "classes": [],
+      "functions": [],
+      "variables": []
+    },
+    "ui/style_modules/responsive.py": {
+      "relative_path": "ui/style_modules/responsive.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\ui\\style_modules\\responsive.py",
+      "module_doc": "Responsive styles for SkillBot application\nThis module contains responsive and adaptive styles",
+      "imports": [],
+      "classes": [],
+      "functions": [
+        {
+          "name": "get_responsive_style",
+          "lineno": 6,
+          "doc": "Возвращает стили, адаптированные для разных размеров экрана",
+          "params": []
+        }
+      ],
+      "variables": []
+    },
+    "ui/style_modules/window.py": {
+      "relative_path": "ui/style_modules/window.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\ui\\style_modules\\window.py",
+      "module_doc": "Window and tab styles for SkillBot application\nThis module contains styles for main window and tabs",
+      "imports": [
+        "colors.*"
+      ],
+      "classes": [],
+      "functions": [],
+      "variables": []
+    },
+    "ui/style_modules/__init__.py": {
+      "relative_path": "ui/style_modules/__init__.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\ui\\style_modules\\__init__.py",
+      "module_doc": "Style modules package for SkillBot application\nThis package contains modularized styles for better maintainability",
+      "imports": [],
+      "classes": [],
+      "functions": [],
+      "variables": []
+    },
+    "ui/tabs/autopot_tab.py": {
+      "relative_path": "ui/tabs/autopot_tab.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\ui\\tabs\\autopot_tab.py",
+      "module_doc": null,
+      "imports": [
+        "core.autopot.AutopotTab",
+        "core.autopot.AutopotThread"
+      ],
+      "classes": [],
+      "functions": [],
+      "variables": [
+        {
+          "name": "__all__",
+          "lineno": 5,
+          "repr": "List"
+        }
+      ]
+    },
+    "ui/tabs/help_tab.py": {
+      "relative_path": "ui/tabs/help_tab.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\ui\\tabs\\help_tab.py",
+      "module_doc": null,
+      "imports": [
+        "PyQt6.QtWidgets.QTextEdit",
+        "os"
+      ],
+      "classes": [
+        {
+          "name": "HelpTab",
+          "lineno": 7,
+          "doc": null,
+          "methods": [
+            {
+              "name": "__init__",
+              "lineno": 8,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "functions": [],
+      "variables": []
+    },
+    "ui/tabs/main_tab.py": {
+      "relative_path": "ui/tabs/main_tab.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\ui\\tabs\\main_tab.py",
+      "module_doc": null,
+      "imports": [
+        "PyQt6.QtCore.Qt",
+        "PyQt6.QtWidgets.QLabel",
+        "PyQt6.QtWidgets.QScrollArea",
+        "PyQt6.QtWidgets.QSizePolicy",
+        "PyQt6.QtWidgets.QVBoxLayout",
+        "PyQt6.QtWidgets.QWidget"
+      ],
+      "classes": [
+        {
+          "name": "MainTab",
+          "lineno": 8,
+          "doc": null,
+          "methods": [
+            {
+              "name": "__init__",
+              "lineno": 9,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "main_window",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "functions": [],
+      "variables": []
+    },
+    "ui/tabs/overlay_tab.py": {
+      "relative_path": "ui/tabs/overlay_tab.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\ui\\tabs\\overlay_tab.py",
+      "module_doc": null,
+      "imports": [
+        "PyQt6.QtCore.Qt",
+        "PyQt6.QtGui.QColor",
+        "PyQt6.QtWidgets.QCheckBox",
+        "PyQt6.QtWidgets.QColorDialog",
+        "PyQt6.QtWidgets.QFormLayout",
+        "PyQt6.QtWidgets.QPushButton",
+        "PyQt6.QtWidgets.QSizePolicy",
+        "PyQt6.QtWidgets.QVBoxLayout",
+        "PyQt6.QtWidgets.QWidget"
+      ],
+      "classes": [
+        {
+          "name": "OverlayTab",
+          "lineno": 9,
+          "doc": null,
+          "methods": [
+            {
+              "name": "__init__",
+              "lineno": 10,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "main_window",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "update_visibility",
+              "lineno": 46,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "idx",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "checked",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "pick_bg_color",
+              "lineno": 52,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "pick_text_color",
+              "lineno": 63,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "update_click_through",
+              "lineno": 71,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "save_to_dict",
+              "lineno": 74,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "load_from_dict",
+              "lineno": 77,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "data",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "functions": [],
+      "variables": []
+    },
+    "ui/tabs/settings_tab.py": {
+      "relative_path": "ui/tabs/settings_tab.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\ui\\tabs\\settings_tab.py",
+      "module_doc": null,
+      "imports": [
+        "PyQt6.QtCore.QLocale",
+        "PyQt6.QtCore.Qt",
+        "PyQt6.QtCore.pyqtSignal",
+        "PyQt6.QtGui.QAction",
+        "PyQt6.QtGui.QBrush",
+        "PyQt6.QtGui.QConicalGradient",
+        "PyQt6.QtGui.QCursor",
+        "PyQt6.QtGui.QDoubleValidator",
+        "PyQt6.QtGui.QFont",
+        "PyQt6.QtGui.QIcon",
+        "PyQt6.QtGui.QIntValidator",
+        "PyQt6.QtGui.QKeySequence",
+        "PyQt6.QtGui.QLinearGradient",
+        "PyQt6.QtGui.QMovie",
+        "PyQt6.QtGui.QPainter",
+        "PyQt6.QtGui.QPalette",
+        "PyQt6.QtGui.QPen",
+        "PyQt6.QtGui.QPicture",
+        "PyQt6.QtGui.QPixmap",
+        "PyQt6.QtGui.QPolygon",
+        "PyQt6.QtGui.QRadialGradient",
+        "PyQt6.QtGui.QRegion",
+        "PyQt6.QtGui.QRegularExpressionValidator",
+        "PyQt6.QtGui.QTransform",
+        "PyQt6.QtGui.QValidator",
+        "PyQt6.QtWidgets.QApplication",
+        "PyQt6.QtWidgets.QCheckBox",
+        "PyQt6.QtWidgets.QComboBox",
+        "PyQt6.QtWidgets.QDialog",
+        "PyQt6.QtWidgets.QFormLayout",
+        "PyQt6.QtWidgets.QHBoxLayout",
+        "PyQt6.QtWidgets.QInputDialog",
+        "PyQt6.QtWidgets.QLabel",
+        "PyQt6.QtWidgets.QLineEdit",
+        "PyQt6.QtWidgets.QPushButton",
+        "PyQt6.QtWidgets.QScrollArea",
+        "PyQt6.QtWidgets.QSizePolicy",
+        "PyQt6.QtWidgets.QSpinBox",
+        "PyQt6.QtWidgets.QTabWidget",
+        "PyQt6.QtWidgets.QVBoxLayout",
+        "PyQt6.QtWidgets.QWidget",
+        "os",
+        "psutil",
+        "utils.KeyCaptureButton",
+        "utils.SelectAllLineEdit",
+        "win32gui",
+        "win32process"
+      ],
+      "classes": [
+        {
+          "name": "SettingsTab",
+          "lineno": 15,
+          "doc": null,
+          "methods": [
+            {
+              "name": "__init__",
+              "lineno": 16,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "main_window",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "apply_window_now",
+              "lineno": 145,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "_on_pause_duration_changed",
+              "lineno": 150,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "select_window",
+              "lineno": 169,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "select_window_by_click",
+              "lineno": 185,
+              "doc": "Show fullscreen overlay and wait for user to click on a window to select it.",
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "add_skill_row",
+              "lineno": 205,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "key",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "cd",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "cast",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "priority",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "remove_skill_row",
+              "lineno": 264,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "widget",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "clear_skills_ui_fast",
+              "lineno": 268,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "apply_skills_now",
+              "lineno": 276,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "functions": [],
+      "variables": []
+    },
+    "ui/tabs/__init__.py": {
+      "relative_path": "ui/tabs/__init__.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\ui\\tabs\\__init__.py",
+      "module_doc": "UI tabs package.",
+      "imports": [],
+      "classes": [],
+      "functions": [],
+      "variables": []
+    },
+    "ui/widgets/click_overlay.py": {
+      "relative_path": "ui/widgets/click_overlay.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\ui\\widgets\\click_overlay.py",
+      "module_doc": null,
+      "imports": [
+        "PyQt6.QtCore.QRect",
+        "PyQt6.QtCore.Qt",
+        "PyQt6.QtCore.pyqtSignal",
+        "PyQt6.QtGui.QColor",
+        "PyQt6.QtGui.QFont",
+        "PyQt6.QtGui.QPainter",
+        "PyQt6.QtWidgets.QApplication",
+        "PyQt6.QtWidgets.QLabel",
+        "PyQt6.QtWidgets.QWidget"
+      ],
+      "classes": [
+        {
+          "name": "ClickOverlay",
+          "lineno": 6,
+          "doc": null,
+          "methods": [
+            {
+              "name": "__init__",
+              "lineno": 9,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "parent",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "message",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "showFullScreenWithMessage",
+              "lineno": 25,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "message",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "paintEvent",
+              "lineno": 65,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "event",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "mousePressEvent",
+              "lineno": 69,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "event",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "keyPressEvent",
+              "lineno": 81,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "event",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "WindowSelectOverlay",
+          "lineno": 87,
+          "doc": null,
+          "methods": [
+            {
+              "name": "__init__",
+              "lineno": 90,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "parent",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "message",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "showFullScreenWithMessage",
+              "lineno": 106,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "message",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "paintEvent",
+              "lineno": 146,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "event",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "mousePressEvent",
+              "lineno": 150,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "event",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "keyPressEvent",
+              "lineno": 210,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "event",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "functions": [],
+      "variables": []
+    },
+    "ui/widgets/key_capture_button.py": {
+      "relative_path": "ui/widgets/key_capture_button.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\ui\\widgets\\key_capture_button.py",
+      "module_doc": null,
+      "imports": [
+        "PyQt6.QtCore.QTimer",
+        "PyQt6.QtCore.Qt",
+        "PyQt6.QtCore.pyqtSignal",
+        "PyQt6.QtWidgets.QPushButton",
+        "keyboard"
+      ],
+      "classes": [
+        {
+          "name": "KeyCaptureButton",
+          "lineno": 6,
+          "doc": null,
+          "methods": [
+            {
+              "name": "__init__",
+              "lineno": 9,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "text",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "parent",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "toggle_capture",
+              "lineno": 20,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "start_capture",
+              "lineno": 26,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "stop_capture",
+              "lineno": 86,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "cancel_capture",
+              "lineno": 102,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "mousePressEvent",
+              "lineno": 105,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "event",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "keyPressEvent",
+              "lineno": 110,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "event",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "functions": [],
+      "variables": []
+    },
+    "ui/widgets/overlay_window.py": {
+      "relative_path": "ui/widgets/overlay_window.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\ui\\widgets\\overlay_window.py",
+      "module_doc": null,
+      "imports": [
+        "PyQt6.QtCore.QPoint",
+        "PyQt6.QtCore.QSize",
+        "PyQt6.QtCore.Qt",
+        "PyQt6.QtCore.pyqtSignal",
+        "PyQt6.QtGui.QColor",
+        "PyQt6.QtGui.QFont",
+        "PyQt6.QtGui.QPainter",
+        "PyQt6.QtGui.QPainterPath",
+        "PyQt6.QtWidgets.QCheckBox",
+        "PyQt6.QtWidgets.QColorDialog",
+        "PyQt6.QtWidgets.QFormLayout",
+        "PyQt6.QtWidgets.QLabel",
+        "PyQt6.QtWidgets.QPushButton",
+        "PyQt6.QtWidgets.QVBoxLayout",
+        "PyQt6.QtWidgets.QWidget"
+      ],
+      "classes": [
+        {
+          "name": "OverlayWindow",
+          "lineno": 5,
+          "doc": null,
+          "methods": [
+            {
+              "name": "__init__",
+              "lineno": 6,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "main_window",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "paintEvent",
+              "lineno": 66,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "event",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "update_overlay",
+              "lineno": 79,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "status",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "cooldowns",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "casting_info",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "queue_info",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "urgent_skill",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "mousePressEvent",
+              "lineno": 95,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "event",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "mouseMoveEvent",
+              "lineno": 105,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "event",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "mouseReleaseEvent",
+              "lineno": 117,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "event",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "set_click_through",
+              "lineno": 121,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "enabled",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "save_settings",
+              "lineno": 126,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "load_settings",
+              "lineno": 140,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "data",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "functions": [],
+      "variables": []
+    },
+    "ui/widgets/select_all_lineedit.py": {
+      "relative_path": "ui/widgets/select_all_lineedit.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\ui\\widgets\\select_all_lineedit.py",
+      "module_doc": null,
+      "imports": [
+        "PyQt6.QtCore.QTimer",
+        "PyQt6.QtWidgets.QLineEdit"
+      ],
+      "classes": [
+        {
+          "name": "SelectAllLineEdit",
+          "lineno": 5,
+          "doc": null,
+          "methods": [
+            {
+              "name": "focusInEvent",
+              "lineno": 6,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "event",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "functions": [],
+      "variables": []
+    },
+    "ui/widgets/__init__.py": {
+      "relative_path": "ui/widgets/__init__.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\ui\\widgets\\__init__.py",
+      "module_doc": "UI widgets package.",
+      "imports": [],
+      "classes": [],
+      "functions": [],
+      "variables": []
+    },
+    "utils/json_helper.py": {
+      "relative_path": "utils/json_helper.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\utils\\json_helper.py",
+      "module_doc": null,
+      "imports": [
+        "json"
+      ],
+      "classes": [],
+      "functions": [
+        {
+          "name": "load_json",
+          "lineno": 3,
+          "doc": null,
+          "params": [
+            {
+              "name": "path",
+              "kind": "arg",
+              "annotation": null
+            }
+          ]
+        },
+        {
+          "name": "save_json",
+          "lineno": 10,
+          "doc": null,
+          "params": [
+            {
+              "name": "path",
+              "kind": "arg",
+              "annotation": null
+            },
+            {
+              "name": "data",
+              "kind": "arg",
+              "annotation": null
+            }
+          ]
+        }
+      ],
+      "variables": []
+    },
+    "utils/logger.py": {
+      "relative_path": "utils/logger.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\utils\\logger.py",
+      "module_doc": null,
+      "imports": [
+        "sys"
+      ],
+      "classes": [],
+      "functions": [
+        {
+          "name": "log",
+          "lineno": 3,
+          "doc": null,
+          "params": [
+            {
+              "name": "msg",
+              "kind": "arg",
+              "annotation": null
+            }
+          ]
+        }
+      ],
+      "variables": []
+    },
+    "utils/profile_manager.py": {
+      "relative_path": "utils/profile_manager.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\utils\\profile_manager.py",
+      "module_doc": null,
+      "imports": [
+        "json_helper.load_json",
+        "json_helper.save_json",
+        "os"
+      ],
+      "classes": [],
+      "functions": [
+        {
+          "name": "list_profiles",
+          "lineno": 6,
+          "doc": null,
+          "params": []
+        }
+      ],
+      "variables": []
+    },
+    "utils/__init__.py": {
+      "relative_path": "utils/__init__.py",
+      "absolute_path": "c:\\Users\\Admin\\Documents\\skillbot\\SkillBot\\utils\\__init__.py",
+      "module_doc": null,
+      "imports": [
+        "PyQt6.QtCore.QTimer",
+        "PyQt6.QtCore.Qt",
+        "PyQt6.QtCore.pyqtSignal",
+        "PyQt6.QtWidgets.QLineEdit",
+        "PyQt6.QtWidgets.QPushButton",
+        "keyboard"
+      ],
+      "classes": [
+        {
+          "name": "KeyCaptureButton",
+          "lineno": 12,
+          "doc": null,
+          "methods": [
+            {
+              "name": "__init__",
+              "lineno": 15,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "text",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "parent",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "toggle_capture",
+              "lineno": 27,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "start_capture",
+              "lineno": 33,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "stop_capture",
+              "lineno": 95,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "cancel_capture",
+              "lineno": 112,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "mousePressEvent",
+              "lineno": 115,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "event",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "keyPressEvent",
+              "lineno": 120,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "event",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "SelectAllLineEdit",
+          "lineno": 127,
+          "doc": null,
+          "methods": [
+            {
+              "name": "focusInEvent",
+              "lineno": 128,
+              "doc": null,
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "event",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "focusOutEvent",
+              "lineno": 132,
+              "doc": "Normalize numeric input: '05' -> '0.5', '5' -> '5', etc.",
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "event",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            },
+            {
+              "name": "keyPressEvent",
+              "lineno": 169,
+              "doc": "Auto-replace comma with dot for numeric input.",
+              "params": [
+                {
+                  "name": "self",
+                  "kind": "arg",
+                  "annotation": null
+                },
+                {
+                  "name": "event",
+                  "kind": "arg",
+                  "annotation": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "functions": [],
+      "variables": []
+    }
+  }
+}
