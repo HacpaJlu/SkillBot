@@ -8,6 +8,8 @@ import keyboard
 import win32gui
 from PyQt6.QtCore import QThread, pyqtSignal
 
+from core.mouse_handler import MouseHandler
+
 
 class SkillBot(QThread):
     update_signal = pyqtSignal(str, dict, str, str, str)
@@ -34,6 +36,9 @@ class SkillBot(QThread):
         self.current_cast = None
         self.cast_end_time = 0
         self.queue = []
+        
+        # Добавляем обработчик мыши
+        self.mouse_handler = MouseHandler()
 
     def log(self, text):
         if self.debug:
@@ -219,3 +224,45 @@ class SkillBot(QThread):
             except Exception as e:
                 if self.debug:
                     self.log_signal.emit(f"Ошибка: {e}")
+    
+    def click_at_coordinates(self, x: int, y: int, button: str = 'left') -> bool:
+        """
+        Выполняет клик по указанным координатам.
+        
+        Args:
+            x (int): Координата X
+            y (int): Координата Y
+            button (str): Кнопка мыши ('left', 'right', 'middle')
+            
+        Returns:
+            bool: True если клик был успешно выполнен, иначе False
+        """
+        return self.mouse_handler.click_at_coordinates(x, y, button)
+    
+    def click_aoe_at_coordinates(self, center_x: int, center_y: int, radius: int = 50, button: str = 'left') -> bool:
+        """
+        Выполняет AOE (Area of Effect) клик вокруг указанных координат.
+        
+        Args:
+            center_x (int): Центральная координата X
+            center_y (int): Центральная координата Y
+            radius (int): Радиус области AOE
+            button (str): Кнопка мыши ('left', 'right', 'middle')
+            
+        Returns:
+            bool: True если клики были успешно выполнены, иначе False
+        """
+        return self.mouse_handler.click_aoe_at_coordinates(center_x, center_y, radius, button)
+    
+    def move_mouse_to(self, x: int, y: int) -> bool:
+        """
+        Перемещает мышь к указанным координатам.
+        
+        Args:
+            x (int): Координата X
+            y (int): Координата Y
+            
+        Returns:
+            bool: True если перемещение было успешно, иначе False
+        """
+        return self.mouse_handler.move_mouse_to(x, y)

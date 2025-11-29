@@ -176,7 +176,7 @@ class AutopotTab(QWidget):
         
         # Добавляем заголовок с кнопкой удаления
         title_container = QHBoxLayout()
-        title = QLabel("<b style='font-size:28px;color:#ff006;'>АВТОПОТ</b>")
+        title = QLabel("<b style='font-size:28px;color:#ff0066;'>АВТОПОТ</b>")
         title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         
         # Кнопка удаления (для примера стилизации, как в настройках скиллов)
@@ -261,7 +261,7 @@ class AutopotTab(QWidget):
         layout.addWidget(self.roi_options_widget)
 
         self.status = QLabel("ВЫКЛЮЧЕН")
-        self.status.setStyleSheet("font-size:22px;color:#ff44;font-weight:bold")
+        self.status.setStyleSheet("font-size:22px;color:#ff4444;font-weight:bold")
         self.status.setAlignment(Qt.AlignmentFlag.AlignCenter)
         layout.addWidget(self.status)
 

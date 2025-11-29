@@ -7,3 +7,4 @@ numpy==1.21.6
 psutil==5.8.0
 pywin32==303
 opencv-python==4.8.1.78
+pyautogui==0.9.54
