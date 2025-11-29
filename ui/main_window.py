@@ -146,7 +146,7 @@ class MainWindow(QMainWindow):
             "background:#111;color:#00ff00;font-family:Consolas;font-size:15px;"
         )
 
-        self.help_tab = HelpTab()
+        self.help_tab = HelpTab(self)
         self.tabs.addTab(self.help_tab, "Помощь")
         tab_bar = self.tabs.tabBar()
         if tab_bar:
@@ -247,7 +247,7 @@ class MainWindow(QMainWindow):
         color = (
             "#00ff00"
             if "РАБОТАЕТ" in status
-            else "#888" if status == "ОЖИДАНИЕ..." else "#ffaa00"
+            else "#888888" if status == "ОЖИДАНИЕ..." else "#ffaa00"
         )
         self.main_tab.status_label.setStyleSheet(
             f"font-size:52px;font-weight:bold;color:{color};"

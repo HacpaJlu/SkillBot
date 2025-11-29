@@ -73,7 +73,7 @@ class KeyCaptureButton(QPushButton):
                 QTimer.singleShot(
                     300,
                     lambda: self.setStyleSheet(
-                        "background:#33;color:white;border-radius:6px;font-weight:bold;font-size:12px;"
+                        "background:#333;color:white;border-radius:6px;font-weight:bold;font-size:12px;"
                     ),
                 )
 
