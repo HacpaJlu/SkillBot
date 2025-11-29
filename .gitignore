@@ -171,3 +171,65 @@ dmypy.json
 
 # __version__.py
 # This file is intentionally included in the repository to track version information
+
+# Additional files to ignore
+*.pyc
+*.pyo
+*.pyd
+.Python
+__pycache__/
+*.so
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE specific files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Coverage and testing
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Logs
+*.log
+
+# Cache
+.cache
+.caches/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+
+# Windows specific
+$RECYCLE.BIN/
+*.exe
+*.dll
+*.msi

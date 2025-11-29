@@ -38,3 +38,14 @@ if __name__ == "__main__":
         print(f"DEBUG: Exception occurred: {e}")
         traceback.print_exc()
         input("Press Enter to exit...")
+
+# Пример использования для коммита и пуша изменений
+# if __name__ == "__main__":
+#     if check_git_repo():
+#         success = git_commit_and_push("Обновление: автоматический коммит через Python")
+#         if success:
+#             print("Изменения успешно отправлены в репозиторий")
+#         else:
+#             print("Ошибка при отправке изменений")
+#     else:
+#         print("Текущая директория не является Git-репозиторием")
